@@ -5,7 +5,7 @@ A WebAssembly-based Amiga terminal emulator for connecting to BBS systems, speci
 ## Features
 
 - Authentic Amiga terminal display (640x256 PAL resolution)
-- Topaz font rendering
+- Topaz font rendering  2
 - ANSI color support
 - WebSocket-based BBS connectivity
 
