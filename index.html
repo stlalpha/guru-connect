@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Guru Connect</title>
+    <style>
+        @font-face {
+            font-family: 'Topaz-8';
+            src: url('assets/TopazPlus_a1200.ttf') format('truetype');
+        }
+        
+        #terminal {
+            image-rendering: pixelated;
+            width: 640px;
+            height: 256px;
+            background: #000;
+            aspect-ratio: 4/3; /* Proper Amiga aspect ratio */
+            border: 1px solid #666;
+        }
+        
+        body {
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="terminal"></canvas>
+    <script type="module">
+        import init, { GuruTerminal } from './pkg/guru_connect.js';
+        
+        // Wait for font to load
+        document.fonts.ready.then(async () => {
+            console.log("Fonts loaded");
+            await init();
+            const terminal = new GuruTerminal("terminal");
+            
+            // Test output is now handled in the draw_test_pattern method
+            console.log("Terminal initialized");
+        });
+    </script>
+</body>
+</html> 
